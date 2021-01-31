@@ -1,0 +1,13 @@
+C:\Users\grace\OneDrive\Desktop\ClassWork\TaskListCapstone\TaskListCapstone\obj\Debug\netcoreapp3.1\TaskListCapstone.csprojAssemblyReference.cache
+C:\Users\grace\OneDrive\Desktop\ClassWork\TaskListCapstone\TaskListCapstone\obj\Debug\netcoreapp3.1\TaskListCapstone.AssemblyInfoInputs.cache
+C:\Users\grace\OneDrive\Desktop\ClassWork\TaskListCapstone\TaskListCapstone\obj\Debug\netcoreapp3.1\TaskListCapstone.AssemblyInfo.cs
+C:\Users\grace\OneDrive\Desktop\ClassWork\TaskListCapstone\TaskListCapstone\obj\Debug\netcoreapp3.1\TaskListCapstone.csproj.CoreCompileInputs.cache
+C:\Users\grace\OneDrive\Desktop\ClassWork\TaskListCapstone\TaskListCapstone\bin\Debug\netcoreapp3.1\TaskListCapstone.exe
+C:\Users\grace\OneDrive\Desktop\ClassWork\TaskListCapstone\TaskListCapstone\bin\Debug\netcoreapp3.1\TaskListCapstone.deps.json
+C:\Users\grace\OneDrive\Desktop\ClassWork\TaskListCapstone\TaskListCapstone\bin\Debug\netcoreapp3.1\TaskListCapstone.runtimeconfig.json
+C:\Users\grace\OneDrive\Desktop\ClassWork\TaskListCapstone\TaskListCapstone\bin\Debug\netcoreapp3.1\TaskListCapstone.runtimeconfig.dev.json
+C:\Users\grace\OneDrive\Desktop\ClassWork\TaskListCapstone\TaskListCapstone\bin\Debug\netcoreapp3.1\TaskListCapstone.dll
+C:\Users\grace\OneDrive\Desktop\ClassWork\TaskListCapstone\TaskListCapstone\bin\Debug\netcoreapp3.1\TaskListCapstone.pdb
+C:\Users\grace\OneDrive\Desktop\ClassWork\TaskListCapstone\TaskListCapstone\obj\Debug\netcoreapp3.1\TaskListCapstone.dll
+C:\Users\grace\OneDrive\Desktop\ClassWork\TaskListCapstone\TaskListCapstone\obj\Debug\netcoreapp3.1\TaskListCapstone.pdb
+C:\Users\grace\OneDrive\Desktop\ClassWork\TaskListCapstone\TaskListCapstone\obj\Debug\netcoreapp3.1\TaskListCapstone.genruntimeconfig.cache
