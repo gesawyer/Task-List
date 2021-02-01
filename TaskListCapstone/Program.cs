@@ -25,7 +25,6 @@ namespace TaskListCapstone
                 tasks.Add(new Task1("Seal all the envelopes", "not started", "9/18/22", "Michel"));
                 tasks.Add(new Task1("Vaccuum whole office", "not started", "10/1/22", "Robert"));
                 List<string> statusCheck = new List<string>();
-
                 while (true)
                 {
                     Console.WriteLine("Welcome to the task manager! Please enter the number of your selection:");
@@ -45,94 +44,111 @@ namespace TaskListCapstone
                         Console.WriteLine("Press enter to return to the main menu.");
                     }
                     if (choice == 2)
-                    {                       
-                        Console.WriteLine("Please enter the name of the new task.");
-                        string newnewTask = (Console.ReadLine());
-                        Console.WriteLine("Please enter the team member's name.");
-                        string newMember = (Console.ReadLine());
-                        Console.WriteLine("Please enter the due date in the format mm/dd/yyyy");
-                        string newDate = (Console.ReadLine());
-                        if (ValidateEntry(newnewTask, newMember, newDate))
+                    {
+                        bool p = true;
+                        while (p)
                         {
-                            Console.WriteLine("Valid entry. Task created!");
-                            tasks.Add(new Task1(newnewTask, "not started", newDate, newMember));
-                        }
-                        else
-                        {
-                            Console.WriteLine("Invalid entry; please try again.");
-                            return;
-                        }
-                        int i = 1;
-                        foreach (Task1 t in tasks)
-                        {
-                            Console.WriteLine($"     {i++}) {t.TaskName}");
-                        }
-                    }
-                    if (choice == 3)
-                    {   
-                        Console.WriteLine("What number task would you like to delete?");
-                        string num = Console.ReadLine();
-                        int number;
-                        bool success = int.TryParse(num, out number);
-                        Console.WriteLine(number);
-                        if (success && number >= 1 && number <= tasks.Count)
-                        {
-                            Console.WriteLine($"Are you sure you would like to delete task number {num}? Y/N");
+                            Console.WriteLine("Please enter the name of the new task.");
+                            string newnewTask = (Console.ReadLine());
+                            p = true;
+                            Console.WriteLine("Please enter the team member's name.");
+                            string newMember = (Console.ReadLine());
+                            Console.WriteLine("Please enter the due date in the format mm/dd/yyyy");
+                            string newDate = (Console.ReadLine());
+                            if (ValidateEntry(newnewTask, newMember, newDate))
                             {
-                                if ((Console.ReadLine() == "y") || (Console.ReadLine() == "Y"))
-                                {
-                                    Console.WriteLine($"Task number {num} deleted.");
-
-                                   tasks.RemoveAt(number - 1);
-                                    int i = 1;
-                                    foreach (Task1 t in tasks)
-                                    {
-                                        Console.WriteLine($"     {i++}) {t.TaskName}");
-                                    }                                   
-                                }
-                                else
-                                {
-                                    TaskMenu();
-                                }
-                            }
-                        }
-                        else
-                        {
-                            Console.WriteLine("incorrect format! Please enter a number.");
-                            TaskMenu();
-                        }
-                    }
-                    else if (choice == 4)
-                    {   
-                        Console.WriteLine("Please enter the number of the task you would like to mark complete.");
-                        string entry = Console.ReadLine();
-                        int numValid;
-                        bool validNumber = int.TryParse(entry, out numValid);
-                        if (validNumber && numValid >= 0 && numValid <= tasks.Count)
-                        {
-                            Console.WriteLine($"Are you sure you would like to mark task number {entry} complete? Y/N");
-                            string answer = Console.ReadLine();
-                            if (answer == "y" || answer == "Y")
-                            {
-                                tasks[numValid-1].Status = "completed";
-                                int i = 1;
-                                Console.WriteLine($"Task number {entry} marked complete!");
-                       
+                                Console.WriteLine("Valid entry. Task created!");
+                                tasks.Add(new Task1(newnewTask, "not started", newDate, newMember));
+                                p = false;
                             }
                             else
                             {
-                                TaskMenu();
+                                Console.WriteLine("Invalid entry; please try again.");
+                                p = true; 
                             }
                         }
-                        else
-                        {
-                            Console.WriteLine("Invalid response.");
-                        }  
                     }
-                    if (Console.ReadLine().ToLower() == "n")
+                    if (choice == 3)
                     {
-                        break;
+                        bool g = true;
+                        while (g)
+                        {
+                            Console.WriteLine("What number task would you like to delete?");
+                            string num = Console.ReadLine();
+                            int number;
+                            bool success = int.TryParse(num, out number);
+                            if (success && number >= 1 && number <= tasks.Count)
+                            {
+                                Console.WriteLine($"Are you sure you would like to delete task number {num}? Y/N");
+                                {
+                                    if ((Console.ReadLine() == "y") || (Console.ReadLine() == "Y"))
+                                    {
+                                        Console.WriteLine($"Task number {num} deleted.");
+
+                                        tasks.RemoveAt(number - 1);
+                                        int i = 1;
+                                        foreach (Task1 t in tasks)
+                                        {
+                                            Console.WriteLine($"     {i++}) {t.TaskName}");
+                                        }
+                                        g = false;
+                                    }
+
+                                    else
+                                    {
+                                        Console.WriteLine("Invalid entry!");
+                                        g = true;
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                Console.WriteLine("incorrect format! Please enter a number.");
+                                g = true;
+                            }
+
+                        }
+                        
                     }
+                    else if (choice == 4)
+                    {
+                        bool go = true;
+                        do
+                        {
+                            Console.WriteLine("Please enter the number of the task you would like to mark complete.");
+                            string entry = Console.ReadLine();
+                            int numValid;
+                            bool validNumber = int.TryParse(entry, out numValid);
+                            if (validNumber && numValid >= 0 && numValid <= tasks.Count)
+                            {
+                                Console.WriteLine($"Are you sure you would like to mark task number {entry} complete? Y/N");
+                                string answer = Console.ReadLine();
+                                if (answer == "y" || answer == "Y")
+                                {
+                                    tasks[numValid - 1].Status = "completed";
+                                    int i = 1;
+                                    Console.WriteLine($"Task number {entry} marked complete!");
+                                    go = false;
+                                    
+                                }
+                                else
+                                {  
+                                    go = true;
+                                }
+                            }
+                            else
+                            {
+                                Console.WriteLine("Invalid response.");
+                                go = true;
+                            }
+
+                        }
+                        while (go);
+                    }
+                        if (Console.ReadLine().ToLower() == "n")
+                        {
+                        break;
+                        }
 
                 }
             }
